@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "286632503963",
+    "project_id": "e-harithasena",
+    "storage_bucket": "e-harithasena.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286632503963:android:d6064e2d35599798db343e",
+        "android_client_info": {
+          "package_name": "com.example.e_harithasena_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBybvXKY1EfESFYmU7aWZxxRykzjVDo82U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286632503963:android:69e95f0d5caaacc3db343e",
+        "android_client_info": {
+          "package_name": "com.example.e_harithasena_worker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBybvXKY1EfESFYmU7aWZxxRykzjVDo82U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
