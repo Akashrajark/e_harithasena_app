@@ -22,7 +22,7 @@ class _SignInPageState extends State<SignInPage> {
       child: Scaffold(
           body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+          padding: const EdgeInsets.all(15.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

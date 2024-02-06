@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const Color primaryColor = Color(0xFF4da736);
 const Color onPrimary = Colors.white;
-const Color textColor = Color(0xFF1b1d15);
+const Color textColor = Color.fromARGB(255, 0, 0, 0);
 const Color inputFillColor = Color(0xFFF2F2F2);
 const Color rowFillColor = Color(0xFFF2F2F2);
 const Color drawerButtonFillColor = Color(0xFFF2F2F2);
