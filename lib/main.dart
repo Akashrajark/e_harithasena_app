@@ -12,12 +12,11 @@ import 'firebase_options.dart';
 import 'ui/screens/signinpage/signinpage.dart';
 
 Future<void> main() async {
-WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
-await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
-
+  );
 
   runApp(const MyApp());
 }
@@ -29,23 +28,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'EHarithaSena',
-        theme: appTheme,
-        home: const CompleteProfile()
-        ,
-routes: {
-  SignInPage.routename:(context) => const SignInPage(),
-  SignUpPage.routename:(context) =>const SignUpPage(),
-  ProfilePage.routename:(context) =>const ProfilePage(),
-  CompleteProfile.routename:(context) =>const CompleteProfile(),
-  ResetPasswordScreen.routename:(context) =>const ResetPasswordScreen(),
-  HomePage.routename:(context) =>const HomePage(),
-  
-},
-        
-        );
-
-        
+      debugShowCheckedModeBanner: false,
+      title: 'EHarithaSena',
+      theme: appTheme,
+      home: const SignInPage(),
+      routes: {
+        SignInPage.routename: (context) => const SignInPage(),
+        SignUpPage.routename: (context) => const SignUpPage(),
+        ProfilePage.routename: (context) => const ProfilePage(),
+        CompleteProfile.routename: (context) => const CompleteProfile(),
+        ResetPasswordScreen.routename: (context) => const ResetPasswordScreen(),
+        HomePage.routename: (context) => const HomePage(),
+      },
+    );
   }
 }
