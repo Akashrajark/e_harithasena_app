@@ -25,7 +25,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController passwordcontroller = TextEditingController();
   final TextEditingController cpasswordcontroller = TextEditingController();
 
-
+bool obs = true;
 
   final signupformkey = GlobalKey<FormState>();
   @override
@@ -90,8 +90,20 @@ class _SignUpPageState extends State<SignUpPage> {
                         TextFormField(
                           validator: passwordValidator,
                           controller: passwordcontroller,
-                    decoration: const InputDecoration(label: Text("Password",)),
-                  ),
+                    decoration:  InputDecoration(label: Text("Password",),
+                      suffixIcon: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      obs = !obs;
+                                    });
+                                  },
+                                  icon: Icon(obs
+                                      ? Icons.visibility
+                                      : Icons.visibility_off))),
+                          obscureText: obs,
+                    ),
+                    
+                  
                      const SizedBox(
                           height: 10,
                         ),
@@ -105,8 +117,18 @@ class _SignUpPageState extends State<SignUpPage> {
                         return null;
                       } ,
                       controller: cpasswordcontroller,
-                    decoration: const InputDecoration(label: Text("Confirm Password",)),
-                  ),
+                    decoration:  InputDecoration(label: Text("Confirm Password",),
+                     suffixIcon: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      obs = !obs;
+                                    });
+                                  },
+                                  icon: Icon(obs
+                                      ? Icons.visibility
+                                      : Icons.visibility_off))),
+                          obscureText: obs,),
+                  
                      
                         SizedBox(
                           height: MediaQuery.of(context).size.height / 30,

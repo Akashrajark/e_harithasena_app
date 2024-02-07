@@ -124,7 +124,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                     height: 10,
                   ),
                   TextFormField(
-                    controller: namecontroller,
+                    controller: hncontroller,
                     decoration: const InputDecoration(
                         label: Text(
                       "House no",
