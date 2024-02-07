@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'EHarithaSena',
         theme: appTheme,
-        home: const SignInPage()
+        home: const HomePage()
         ,
 routes: {
   SignInPage.routename:(context) => const SignInPage(),

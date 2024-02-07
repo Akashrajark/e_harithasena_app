@@ -9,10 +9,18 @@ import '../../../models/usermodel.dart';
 import '../../values/color.dart';
 import '../../widgets/custombutton.dart';
 
-class CompleteProfile extends StatelessWidget {
+class CompleteProfile extends StatefulWidget {
   static const routename='completeprofile';
   const CompleteProfile({super.key});
 
+  @override
+  State<CompleteProfile> createState() => _CompleteProfileState();
+}
+
+class _CompleteProfileState extends State<CompleteProfile> {
+  final namecontroller= TextEditingController();
+  final hncontroller= TextEditingController();
+  String? district,morp,wardno;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -61,6 +69,7 @@ class CompleteProfile extends StatelessWidget {
                     height: 30,
                   ),
                   TextFormField(
+                    controller: namecontroller,
                     decoration: const InputDecoration(
                         label: Text(
                       "Name",
@@ -94,6 +103,7 @@ class CompleteProfile extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
+                    controller: namecontroller,
                     decoration: const InputDecoration(
                         label: Text(
                       "House no",
