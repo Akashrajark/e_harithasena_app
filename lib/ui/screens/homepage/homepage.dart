@@ -18,17 +18,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
+      appBar: AppBar(
         automaticallyImplyLeading: true,
         backgroundColor: primaryColor,
         centerTitle: true,
-        title:  Text(
-          "E-harithaseva",
-          style: GoogleFonts.pacifico(textStyle: TextStyle(
-              color: Colors.white,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold),)
-        ),
+        title: Text("E-harithaseva",
+            style: GoogleFonts.pacifico(
+              textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold),
+            )),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () async {
         await FirebaseAuth.instance.signOut();
@@ -54,50 +54,52 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Next Pickup Date",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleLarge!
-                              .copyWith(color: onPrimary),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Text(
-                          "6 FEB",
-                          style: Theme.of(context)
-                              .textTheme
-                              .displayMedium!
-                              .copyWith(
-                                  color: onPrimary,
-                                  fontWeight: FontWeight.bold),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              home ? "IM HOME" : "NOT HOME",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge!
-                                  .copyWith(color: onPrimary),
-                            ),
-                            SizedBox(width: 20,),
-                            Switch(
-                              value: home,
-                              onChanged: (value) {
-                                setState(() {
-                                  home = !home;
-                                });
-                              },
-                              activeTrackColor: Colors.white,
-                              activeColor: Colors.green[700],
-                            )
-                          ],
-                        ),
-                      ]),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Next Pickup Date",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(color: onPrimary),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        "6 FEB",
+                        style: Theme.of(context)
+                            .textTheme
+                            .displayMedium!
+                            .copyWith(
+                                color: onPrimary, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            home ? "IM HOME" : "NOT HOME",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(color: onPrimary),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Switch(
+                            value: home,
+                            onChanged: (value) {
+                              setState(() {
+                                home = !home;
+                              });
+                            },
+                            activeTrackColor: Colors.white,
+                            activeColor: Colors.green[700],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Align(
