@@ -1,11 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_harithasena_app/ui/screens/homepage/homepage.dart';
 import 'package:e_harithasena_app/ui/widgets/customdropdown.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../models/usermodel.dart';
 import '../../values/color.dart';
 import '../../widgets/custombutton.dart';
 
 class CompleteProfile extends StatelessWidget {
+  static const routename='completeprofile';
   const CompleteProfile({super.key});
 
   @override
@@ -15,7 +20,28 @@ class CompleteProfile extends StatelessWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(15.0),
           child: CustomButton(
-              buttonText: "Submit", onPressed: () {}, txtcolor: onPrimary),
+              buttonText: "Submit", onPressed: ()async{
+                try {
+                
+                 UserModel userinfo = UserModel(
+              userid: FirebaseAuth.instance.currentUser?.uid,
+              name: null,
+              district: null,
+              houseno: null,
+              iscomp: false,
+              morp: null,
+              wardno: null);
+          await FirebaseFirestore.instance
+              .collection("users")
+              .doc(FirebaseAuth.instance.currentUser?.uid)
+              .set(
+                userinfo.toMap(),
+              );
+              Navigator.of(context).pushNamedAndRemoveUntil(HomePage.routename, (route) => false);
+              } catch (e){
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString(),),),);
+              }
+              }, txtcolor: onPrimary),
         ),
         body: Padding(
           padding: const EdgeInsets.all(15.0),

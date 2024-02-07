@@ -6,6 +6,7 @@ import '../../widgets/custombutton.dart';
 import '../../widgets/customdropdown.dart';
 
 class ProfilePage extends StatefulWidget {
+  static const routename='profilepage';
   const ProfilePage({super.key});
 
   @override
